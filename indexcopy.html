@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgb(40, 36, 36);
+          
+
+        }
+        .section1{
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 70px;
+            background-image: url(netflix/_websitebground.jpg);
+           position: relative;
+           z-index: 1;
+    
+         
+          
+        }
+        .bgcolor{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            position: absolute;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+           
+
+        }
+        .header{
+            width: 100%;
+            height: 7vh;
+            padding: 40px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+            
+          
+           
+        }
+        .logo-div{
+            width: 40%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            
+        }
+       .header img{
+            width: 280px;
+            height: 170px;
+            
+        }
+        .divsign-in{
+            width: 48%;
+            height: 7vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+          
+        }
+        .header select ,.footer select{
+            width: 109px;
+            height: 30px;
+            font-size: 19px;
+            color: white;
+            border: 2px solid gray;
+            border-radius: 5px;
+            background-color: transparent;
+            
+        }
+        
+        select option {
+         width: 90px;
+         height: 50px;
+         color: black;
+        }
+        
+        option:hover{
+            color: white;
+        }
+        .btn1{
+            width: 80px;
+            height: 40px;
+            font-size: 18px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+        }
+        .get-movies{
+            width: 100%;
+           min-height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            
+            
+           
+        }
+        .get-movies h1{
+            font-size: 45px;
+            text-align: center;
+            color: white;
+
+        }
+        .get-movies h4{
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            color: white;
+        }
+        .input{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            gap: 5px;
+            
+        }
+        input::placeholder{
+            color: white;
+        }
+        .input input,.input2 input{
+            width: 300px;
+            height: 50px;
+            font-size: 17px;
+            color: white;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            opacity: 0.7;
+            background-color:transparent;
+            z-index: 2;
+        }
+        .input button,.input2 button{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            border-radius: 5px;
+            background-color: red;
+            border: 2px solid red;
+        
+            
+        }
+        .div-tv{
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: black;
+            
+        }
+        .tv-head{
+           width: 700px;
+           min-height: 300px;
+            text-align: center;
+            display: flex;
+             
+            flex-direction: column;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+          
+        }
+       .tv-head h1 {
+        width: 100%;
+        font-size: clamp(15px,45px,50px);
+        color: white;
+       }
+
+       .tv-head h2{
+        width: 100%;
+        font-weight: 100;
+        min-height: 20px;
+        font-size: clamp(2px,40px,20px);
+        /* border: 2px solid red; */
+        
+        color: white;
+       }
+        .tv{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+          
+            align-items: center;
+            position: relative;
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+        }
+        .tv video{
+            
+            width: 71%;
+            height: 400px;
+            
+            position: relative;
+            overflow: hidden;
+        }
+        .tv img{
+            width: 98%;
+            height: 400px;
+            position: absolute; 
+            overflow: hidden;
+            
+           
+        }
+        .sec3{
+            width: 100%;
+            min-height: 60vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: black;
+        }
+        .sec3-div1{
+            width: 500px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            
+        }
+
+        .sec3-div1 img{
+            width:500px;
+            height: 500px;
+        
+        }
+        .load{
+            width: 70%;
+            height: 80px;
+            padding: 5px;
+            position: absolute;
+            left: 15%;
+            top: 78%;
+            border: 2px solid gray;
+            border-radius: 17px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px; 
+            background-color: black;
+            
+        }
+        .load1 {
+            width: 230px;
+            height: 130px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+            
+
+           
+        }
+        .load1 img{
+            width: 50px;
+            height: 60px;
+            
+        }
+        .load1-div{
+            width: 140px;
+            height: 60px;
+           
+        }
+    
+        .load1-div h4{
+            font-size: 15px;
+            color: white;
+        }
+        .load1-div h5{
+            font-size: 13px;
+            color: rgb(82, 82, 252);
+        }
+        
+        .load-div{
+            width: 60px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            
+        }
+        .load-div img{
+            width: 100%;
+            height: 90%;
+          
+
+        }
+        
+        .sec3-div2{
+            width: 700px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        
+        }
+      .sec3 h1{
+        font-size: 45px;
+        text-align: center;
+        color: white;
+      }
+     .sec3 h2 {
+        font-size: 20px;
+        font-weight: 100;
+        text-align: center;
+        color: white;
+     }
+     .sec4{
+        width: 100%;
+            min-height: 60vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: black;
+     }
+    .sec4 h1{
+        font-size: 45px;
+        text-align: center;
+        color: white;
+    }
+    .sec4 h2{
+        font-size: 20px;
+        font-weight: 100;
+        text-align: center;
+        color: white;
+    }
+    
+    .sec4-div2{
+        width: 600px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+    .sec4-div2 {
+        width: 500px;
+        height: 500px; 
+        position: relative;
+       
+        
+    }
+  
+    .sec4-div2 video{
+        width:300px;
+        top:40px;
+        left: 98px;
+        height: auto;
+        position: absolute;
+     
+        
+        
+    }
+    .sec4-div2 img{
+        width: 100%;
+        top:0;
+        left: 0;
+        height: auto;
+        position: absolute;
+        
+    }
+    
+     .sec5{
+        width: 100%;
+            min-height: 60vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: black;
+     }
+     .sec5-div1{
+        width: 530px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+     }
+
+     .sec5-div1 img {
+         width: 100%;
+         height: 500px;
+        
+     }
+     .sec5-div2{
+        width: 500px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        
+     }
+     .sec5-div2 h1 {
+        text-align: center;
+     font-size: 45px;
+     color: white;
+     }
+.sec5-div2 h2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+}
+.menu{
+            width: 100%;
+            min-height: 70vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column; 
+            align-items: center;
+            gap: 4px;
+            padding: 40px;
+            background-color: black;
+}
+
+.menu-h1{
+    font-size: 45px;
+    color: white;
+    margin-top: 20px;
+}
+
+.menu-btn{
+    width:70% ;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    padding: 20px;
+    border:none;
+    background-color: rgb(45, 41, 41);
+}
+.menu-btn:hover{
+    background-color: rgb(59, 55, 55);
+}
+.menu-btn span{
+    font-size: 39px;
+    font-weight: 200;
+    font-family:  Times, serif;
+    color: white;
+}
+.spanrotate{
+    transform:rotate(50deg);
+}
+.menu-div{
+    display: none;
+    width: 70%;
+    font-size: 20px;
+    color: white;
+    padding: 18px;
+    margin: 4px;
+    background-color: rgb(45, 41, 41);
+    
+ 
+}
+.divexpand{
+    display: block;
+}
+.get-movies2{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 25px;
+           
+
+}
+.input2{
+    width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            gap: 5px;
+            margin-bottom: 40px;
+
+}
+.menu h4{
+    font-size: 18px;
+    color: white;
+}
+
+.footer{
+            width: 100%;
+            min-height: 40vh;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column; 
+            align-items: center;
+            gap: 11px;
+            padding: 10px;
+            background-color: black;
+}
+
+.footer-div1{
+    width: 70%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+}
+.footer-div1 h4{
+    font-size: 15px;
+    padding-top: 30px;
+    color: white;
+}
+.footer-div2{
+    width: 70%;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-between;
+    gap: 20px;
+    
+
+
+}
+.footer-div2 div{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 13px;
+    
+
+}
+.footer-div2 div a{
+    color: gray;
+}
+.footer-div3{
+    width: 70%;
+
+}
+.footer-div3 h4{
+    font-size: 14px;
+    padding-top: 20px;
+    color:gray;
+}
+@media screen and (max-width: 467px) {
+    .header{
+            width: 100%;
+            height: 7vh;
+            padding: 17px;  
+           
+        }
+
+       .sec4-div2 video {
+            width: 60%;
+            height: auto;
+            left: 50px;
+            align-items: center;
+      }
+      .header img{
+            width: 150px;
+            height: 100px;
+        }
+        
+        .tv img{
+            width: 98%;
+            height: 30vh;
+            position: absolute; 
+            overflow: hidden;
+            
+           
+        }
+
+        .tv video{
+            height: 29vh;
+        }
+        .header select {
+            width: 50px;
+            height: 30px;
+            font-size: 19px;
+            color: white;
+            border: 2px solid gray;
+            border-radius: 5px;
+            background-color: transparent;
+            
+        }
+        .load{
+            width: 84%;
+            height: 80px;
+            padding: 5px;
+            position: absolute;
+            left: 11%;
+            top: 78%;
+            border: 2px solid gray;
+            border-radius: 17px;
+            display: flex;
+            flex-wrap: nowrap;
+                   
+        }
+
+        .load1 {
+            width: 150px;
+            height: 80px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+           
+        }
+
+
+        .get-movies h1,.tv-head h1,.sec3-div2 h1,.sec4-div1 h1,.sec5-div2 h1,.menu-h1{
+            font-size: 34px;
+       }
+      .menu-div{
+        width: 80%;
+      }
+        .menu-btn{
+           width:80% ;
+           height: 80px;
+           font-size: 17px;
+       }
+     
+        
+    }
+    </style>
+</head>
+<body>
+    <section class="section1">
+
+        <div class="header">
+            <div class="logo-div">
+                <img src="netflix/BrandAsset-removebg.png" alt="">
+            </div>
+            <div class=" divsign-in">
+                <select id="select1">
+                    <option value="english">English</option>
+                    <option value="hindi" selected>hindi</option>
+                </select>
+                <button class="btn1">साइन इन </button>
+            </div>
+            </div>
+
+            <div class="get-movies">
+                <h1>अनलिमिटेड फ़िल्में, टीवी शो के साथ भी बहुत कुछ </h1>
+
+                <h4>जहां चाहें देखें. जब चाहें कैंसल करें.
+
+                   
+                    </h4>
+                <h4>देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए अपना ईमेल एड्रेस डालें.</h4>
+
+                <div class="input">
+                    <input  type="text" placeholder="ईमेल एड्रेस ">
+                    <button class="btn2" type="button">शुरु करे  > </button> 
+               
+                </div>
+                </div>
+        
+           
+
+    <div class="bgcolor">
+
+    </div>
+    </section>
+   
+    <section class="div-tv">
+<div class="tv-head">
+    <h1>अपने टीवी पर आनंद लें</h1>
+    <h2>स्मार्ट टीवी, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray प्लेयर के साथ ही दूसरे डिवाइस पर भी देखें.</h2>
+</div>
+
+<div class="tv">
+    <video controls autoplay loop>
+        <source src="netflix/video-tv-in-0819.m4v" type="video/mp4">
+    </video>
+
+    <img src="netflix/tv.png" alt="">
+</div>
+    </section>
+    <section class="sec3">
+        <div class="sec3-div1">
+<img src="netflix/mobile-0819.jpg" alt="">
+
+<div class="load">
+  <div class="load1">
+    <img src="netflix/boxshot.png" alt="">
+    <div class="load1-div">
+         <h4>Stranger Things</h4>
+         <h5>डाऊनलोड ....</h5>
+    </div>
+    
+  </div>
+  <div class="load-div">
+   <img src="netflix/download-icon.gif" alt="">
+</div>
+</div>
+        </div>
+<div class="sec3-div2">
+<h1>ऑफ़लाइन देखने के लिए अपने शो डाउनलोड करें</h1>
+<h2>अपने पसंदीदा शो और फ़िल्में सेव करें, ताकि आप कभी भी इन्हें देख सकें.
+
+</h2>
+</div>
+
+    </section>
+<section class="sec4">
+<div class="sec4-div1">
+ <h1>हर जगह देखें</h1>
+ <h2>बिना ज़्यादा पेमेंट किए, अपने फ़ोन, टैबलेट, लैपटॉप और टीवी पर अनलिमिटेड फ़िल्में और टीवी शो स्ट्रीम करें.</h2>
+</div>
+
+<div class="sec4-div2">
+
+    <video controls autoplay loop>
+        <source src="netflix/video-devices-in.m4v" type="video/mp4">
+    </video>
+
+    <img src="netflix/device-pile-in.png" alt="">
+</figure>
+</div>
+</section>
+
+    <section class="sec5">
+        <div  class="sec5-div1">
+   <img src="netflix/netfliximg.png" alt="">
+        </div>
+        <div class="sec5-div2">
+     <h1>बच्चों के लिए प्रोफ़ाइल बनाएं</h1>
+     <h2>बच्चों को जाने दें अपने पसंदीदा किरदारों के साथ उस रोमांचक सफ़र पर जो सिर्फ़ उनके लिए ही है - आपकी मेंबरशिप के साथ फ़्री.</h2>
+        </div>
+    </section>
+    <section class="menu">
+
+        <h1 class="menu-h1">अक्सर पूछे जाने वाले सवाल</h1>
+       
+        <button type="button" class="menu-btn" id="menu-btn1"> 
+            Netflix क्या है?<span class="span-add">+</span>         
+        </button>
+        <div class="menu-div">
+            Netflix एक स्ट्रीमिंग सर्विस है जिसके ज़रिए आप हज़ारों इंटरनेट-कनेक्टेड डिवाइस पर तरह-तरह के अवॉर्ड विजेता टीवी शो, फ़िल्में, ऐनिमे, डॉक्यूमेंट्रीज़ का लुत्फ़ उठा सकते हैं.
+<br><br>
+            आप जब चाहें, जितना चाहें, बिना किसी विज्ञापन के देख सकते हैं – सारा कॉन्टेंट बहुत कम मासिक शुल्क पर. खोजने के लिए हमेशा कुछ नया होता है और हर हफ़्ते नए टीवी शो और फ़िल्में जोड़ी जाती हैं!
+           
+        </div>
+
+        <button type="button" class="menu-btn" id="menu-btn1"> 
+            Netflix की कीमत कितनी है?    <span class="span-add">+</span>         
+        </button>
+        <div class="menu-div">
+            हर महीने की तय फ़ी देकर अपने स्मार्टफ़ोन, टैबलेट, स्मार्ट टीवी, लैपटॉप, या स्ट्रीमिंग डिवाइस पर Netflix देखें. हर महीने ₹149 से ₹649 तक के प्लान. कोई एक्सट्रा कीमत या कॉन्ट्रैक्ट नहीं.
+        </div>
+
+        <button type="button" class="menu-btn" id="menu-btn1"> 
+            मैं कहां देख सकता हूं?  <span class="span-add">+</span>         
+        </button>
+        <div class="menu-div">
+            कहीं भी, कभी भी देखें अपने पर्सनल कंप्यूटर से या स्मार्ट टीवी, स्मार्टफ़ोन, टैबलेट, स्ट्रीमिंग मीडिया प्लेयर और गेम कंसोल सहित Netflix ऐप ऑफ़र करने वाले किसी भी इंटरनेट-कनेक्टेड डिवाइस पर तुरंत देखने के लिए, वेब पर netflix.com पर अपने Netflix अकाउंट में साइन इन करें.
+            <br><br>
+            आप iOS, Android या Windows 10 ऐप से भी अपने पसंदीदा शो डाउनलोड कर सकते हैं. चलते-फिरते और बिना इंटरनेट कनेक्शन के देखने के लिए डाउनलोड का उपयोग करें. Netflix को अपने साथ कहीं भी ले जाएं.
+        </div>
+      
+        
+        <button type="button" class="menu-btn" id="menu-btn1"> 
+            मैं कैसे कैंसल करूं?  <span class="span-add">+</span>         
+        </button>
+        <div class="menu-div">
+            Netflix लचीला है. कोई परेशान करने वाले कॉन्ट्रैक्ट नहीं और कोई बंधन नहीं हैं. आप आसानी से दो क्लिक में अपना अकाउंट ऑनलाइन कैंसल कर सकते हैं. कोई कैंसलेशन फ़ीस नहीं है – अपना अकाउंट कभी भी शुरू या बंद करें.
+        </div>
+
+        <button type="button" class="menu-btn" id="menu-btn1"> 
+            मैं Netflix पर क्या देख सकता/सकती हूं?<span class="span-add">+</span>         
+        </button>
+        <div class="menu-div">
+            Netflix की बहुत बड़ी लाइब्रेरी में फ़ीचर फ़िल्मों, डॉक्यूमेंट्री, टीवी शो, ऐनिमे, अवॉर्ड-विनिंग Netflix ओरिजिनल्स के अलावा और भी बहुत कुछ है. आप जितना चाहें, कभी भी देखें.
+        </div>
+
+        <button type="button" class="menu-btn" id="menu-btn1"> 
+            क्या Netflix बच्चों के लिए ठीक है? <span class="span-add">+</span>         
+        </button>
+        <div class="menu-div">
+            आपकी मेंबरशिप में Netflix किड्स एक्सपीरियंस शामिल है. बच्चे अपनी तरह से पारिवारिक टीवी शो और फ़िल्मों का आनंद लेते हैं, लेकिन आप उनके द्वारा देखे जाने वाले कॉन्टेंट को कंट्रोल कर सकते हैं.
+           <br><br>
+           बच्चों की प्रोफ़ाइल में PIN से सुरक्षित पैरेंटल कंट्रोल्स होते हैं जिससे आप बच्चों को मेच्योरिटी रेटिंग वाले कॉन्टेंट देखने से रोक सकते हैं और उन टाइटल को ब्लॉक कर सकते हैं जिन्हें आप नहीं चाहते हैं कि बच्चे देखें.
+        </div>
+       
+        <div class="get-movies2">
+            
+            <h4>देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए अपना ईमेल एड्रेस डालें.</h4>
+
+            <div class="input2">
+                <input  type="text" placeholder="ईमेल एड्रेस   ">
+                <button class="btn2" type="button">शुरु करे  > </button> 
+           
+            </div>
+            </div>
+
+    </section>
+    <section class="footer">
+
+    <div class="footer-div1">
+        <h4>Questions? Call 000-800-919-1694</h4>
+    </div>
+
+    <div class="footer-div2">
+        <div>
+           <a href="#">FAQ</a>
+           <a href="#">इन्वेस्टर संबंध </a>
+           <a href="#">प्रायवेसी </a>
+           <a href="#">स्पीड टेस्ट </a>
+
+        </div>
+
+        <div>
+            <a href="#">सहायता केंद्र </a>
+            <a href="#">नौकरिया </a>
+            <a href="#">कुकी प्रेफेरेंस</a>
+            <a href="#">कानूनी सुचनाए</a>
+  
+ 
+         </div>
+
+         <div>
+            <a href="#">खाता </a>
+            <a href="#">देखने के तरिके</a>
+            <a href="#">कॉर्पोरेट जानकारी</a>
+            <a href="#">Netflix पर</a>
+  
+ 
+         </div>
+
+         <div>
+            <a href="#">मीडिया केंद्र</a>
+            <a href="#">उपयोग की शरते</a>
+            <a href="#">हमे संपर्क करे</a>
+            
+  
+ 
+         </div>
+    </div>
+
+    <div class="footer-div3">
+       <select id="select2">
+        <option value="english">English</option>
+        <option value="hindi" selected>hindi</option>
+       </select>
+    <h4>
+    Netflix भारत 
+    </h4>
+    </div>
+    </section>
+<script>
+    let btn1 =document.querySelectorAll(".menu-btn");
+
+    let spanadd=document.querySelectorAll(".span-add");
+   let menudiv=document.querySelectorAll(".menu-div");
+
+
+    btn1[0].addEventListener("click",()=>{
+        console.log("clicked btn"); 
+        spanadd[0].classList.toggle("spanrotate");
+        
+        menudiv[0].classList.toggle("divexpand")
+
+    })
+
+    btn1[1].addEventListener("click",()=>{
+        console.log("clicked btn"); 
+        spanadd[1].classList.toggle("spanrotate");
+        
+        menudiv[1].classList.toggle("divexpand")
+
+    })
+
+    btn1[2].addEventListener("click",()=>{
+        console.log("clicked btn"); 
+        spanadd[2].classList.toggle("spanrotate");
+        
+        menudiv[2].classList.toggle("divexpand")
+
+    })
+
+    btn1[3].addEventListener("click",()=>{
+        console.log("clicked btn"); 
+        spanadd[3].classList.toggle("spanrotate");
+        
+        menudiv[3].classList.toggle("divexpand")
+
+    })
+
+    btn1[4].addEventListener("click",()=>{
+        console.log("clicked btn"); 
+        spanadd[4].classList.toggle("spanrotate");
+        
+        menudiv[4].classList.toggle("divexpand")
+
+    })
+
+    btn1[5].addEventListener("click",()=>{
+        console.log("clicked btn"); 
+        spanadd[5].classList.toggle("spanrotate");
+        
+        menudiv[5].classList.toggle("divexpand")
+
+    })
+
+    let select1 = document.querySelector("#select1");
+    select1.addEventListener("change",()=>{
+        if(select1.value == "english"){
+            console.log("english selected")
+         window.open("index.html","_self")
+        }
+       
+    })
+
+    
+    let select2 = document.querySelector("#select2");
+    select2.addEventListener("change",()=>{
+        if(select2.value == "english"){
+            console.log("english selected")
+        
+         window.open("index.html","_self")
+        }
+        
+    })
+</script>
+</body>
+</html>
